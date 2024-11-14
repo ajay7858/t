@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
         /* Add your styling here */
         body {
@@ -24,9 +26,10 @@
         } */
         .level, .turn-option {
             font-size: 1.5em;
-            margin-bottom:25px;
+            margin-bottom:15px;
             color: #aaf30b;
             font-weight: bold;
+            border: none;
 
         }
         .player-name, .turn-option label {
@@ -78,7 +81,7 @@
         }
         .restart {
             margin-top: 20px;
-            padding: 12px 25px;
+            padding: 12px 5px;
             font-size: 1.2em;
             cursor: pointer;
             border: none;
@@ -90,7 +93,7 @@
         }
         .restart:hover {
             margin-top: 20px;
-            padding: 12px 25px;
+            padding: 12px 5px;
             font-size: 1.2em;
             cursor: pointer;
             border: none;
@@ -224,8 +227,8 @@
 <body>
     <!-- <h1>Tic Tac Toe</h1> -->
     <div class="level">Level : <span id="level-number"></span></div>
+   <div class="turn-option"> First Turn 👇</div>
     <div class="turn-option">
-        First Turn : 
         <label class="h">
             <input  type="radio" name="first-turn" value="Your" checked> Your
         </label>
@@ -248,7 +251,7 @@
     <div class="message"></div>
     <button class="restart">Restart Game</button>
     
-    <button class="settings-button">Settings</button>
+    <button class="settings-button"><i class="fas fa-cog"></i> </button>
 
     <div class="settings-overlay"></div>
     <div class="settings-popup">
@@ -256,7 +259,7 @@
         <button id="toggle-music">Background Music</button>
     </div>
     <div>
-        <button id="back" onclick="LevelChange()">Level</button>
+        <button id="back" onclick="LevelChange()"> <span class="material-icons">bar_chart</span></button>
     </div>
     <script>
         function LevelChange() {
