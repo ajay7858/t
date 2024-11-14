@@ -24,12 +24,13 @@
             font-size: 3em;
             color: #bc61ca;
         } */
-        .level, .turn-option {
-            font-size: 1.5em;
+        .turn-option {
+            font-size: 35px;
             margin-bottom:15px;
             color: #aaf30b;
             font-weight: bold;
             border: none;
+            margin: 10px;
 
         }
         .player-name, .turn-option label {
@@ -198,6 +199,11 @@
             border-radius: 8px;
             top: 100px;
             cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 10px;
+            width: 100px;
+            text-align: center;
         }
         /* .level:hover{
             color: #000000;
@@ -212,11 +218,33 @@
         .h{
             background:linear-gradient( to right, #2b5876 , #4e4376 );
             padding: 7px;
+            padding-right: 15px;
             border-radius: 10px;
             text-align: center;
+            margin-right: 10px;
+            align-items: center;
+            margin-left: 5px;
+            
     
         }
         .h:hover{
+            background:linear-gradient( to right,   #4e4376  ,#2b5876);
+            padding: 7px;
+            border-radius: 8px;
+            text-align: center;
+           
+        }
+        .hh{
+            background:linear-gradient( to right, #2b5876 , #4e4376 );
+            padding: 7px;
+            padding-right: 15px;
+            border-radius: 10px;
+            text-align: center;
+            align-items: center;
+            
+    
+        }
+        .hh:hover{
             background:linear-gradient( to right,   #4e4376  ,#2b5876);
             padding: 7px;
             border-radius: 8px;
@@ -227,13 +255,17 @@
 <body>
     <!-- <h1>Tic Tac Toe</h1> -->
     <div class="level">Level : <span id="level-number"></span></div>
-   <div class="turn-option"> First Turn 👇</div>
+   
     <div class="turn-option">
+        First :
         <label class="h">
-            <input  type="radio" name="first-turn" value="Your" checked> Your
+            <input  type="radio" name="first-turn" value="Your" checked><i class="fa-solid fa-user"></i>
         </label>
-        <label class="h">
-            <input type="radio" name="first-turn" value="Computer"> Computer
+       
+        <label class="hh">
+            <input type="radio" name="first-turn" value="Computer"><i class="fas fa-desktop"></i>
+            
+            
         </label>
     </div>
     <div class="player-name">Player :  <span id="player-name"></span></div>
