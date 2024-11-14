@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>Tic Tac Toe - Home</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,136 +14,65 @@
             height: 100vh;
             margin: 0;
             background-color: #282c34;
-            flex-direction: column;
-            color: rgb(161, 39, 39);
         }
 
-        h1 {
-            margin-top: 150px;
-            font-size: 3em;
-            color: #bc61ca;
-            cursor: pointer;
-            
-        }
-
-        .level {
-            font-size: 1.5em;
-            color: #2f8cc6;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .input-container {
-            margin-top: 0px;
+        .container {
             text-align: center;
-        }
-
-        .input-container input {
-            padding: 8px;
-            font-size: 1em;
-            margin-bottom: 20px;
-        }
-
-        .level-buttons {
+            color: #fff;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Space between items */
         }
 
-        .level-buttons button {
-            height: 70px;
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #275abf;
+            cursor: pointer;
+        }
+
+        .logo-image {
+            height: 200px;
             width: 200px;
-            padding: 12px 25px;
-            font-size: 1.2em;
+            border-radius: 30px;
+        }
+
+        .start-btn {
+            padding: 12px 30px;
+            font-size: 1.5em;
             cursor: pointer;
             border: none;
-            background:linear-gradient( to right, #11998E  , #38EF7D );
-            color: #ffff;
+            background-color: #4caf50;
+            color: #fff;
             font-weight: bold;
-            font-size: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background 0.3s ease;
         }
-        /* .level-buttons button:hover{
-          color: #2f8cc6;
 
-          background:linear-gradient( to right,#38EF7D , #11998E );
-
-        } */
-
-        #friend {
-            color: rgb(255, 255, 255);
-            background-color: rgb(221, 113, 63);
-            height: 80px;
-            width: 200px;
-            padding: 0px;
-            border-radius: 15px;
-            margin: 15px;
-            border: none;
-            text-align: center;
-            font-weight: bold;
-            font-size: 18px;
-         }
-         #friend:hover{
-            color: #ccc8c8;
-            background-color: rgb(169, 90, 53);
-
-         }
-         #player-name{
-            border-radius: 40px;
-            border: none;
-            color: #2f8cc6;
-            margin-top: 0px;
-            height: 40px;
-            width:300px;
-         }
-
-
-        
+        .start-btn:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 
 <body>
-    <h1 id="home" onclick="openPage2()">Tic Tac Toe</h1>
-    <div class="input-container">
-        <input type="text" id="player-name" placeholder="  Enter your Name..." />
-    </div>
+    <div class="container">
+        <div class="logo">Tic Tac Toe</div>
 
-    <div class="level">
-        <span>Select Level 👇</span>
-    </div>
-    <div class="level-buttons">
-        <button class="level-btn" data-level="1">Level 1</button>
-        <button class="level-btn" data-level="2">Level 2</button>
-        <button class="level-btn" data-level="3">Level 3</button>
-        <button class="level-btn" data-level="4">Level 4</button>
-        <button class="level-btn" data-level="5">Level 5</button>
-        <button class="level-btn" data-level="6">Level 6</button>
+        <!-- Centered Image -->
+        <img src="logo.jpg" alt="Logo Image" class="logo-image">
 
-    </div>
-    <div id="play">
-        <button  id="friend" onclick="openPage()">2 Player Play</button>
+        <!-- Centered Start Button -->
+        <button class="start-btn" onclick="startGame()">Start Game</button>
     </div>
 
     <script>
-        function openPage2() {
-            window.location.href = 'index.html'; // Change this to the actual game page file
+        function startGame() {
+            window.location.href = "level.html";  // Change this to the actual game page file
         }
-
-         function openPage() {
-            window.location.href = 'friend.html'; // Change this to the actual game page file
-        }
-
-        // Add event listeners to each level button
-        document.querySelectorAll('.level-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                const playerName = document.getElementById('player-name').value || 'Player';
-                const level = button.getAttribute('data-level');
-                window.location.href = `game.html?level=${level}&player=${playerName}`;
-            });
-        });
     </script>
 </body>
 
